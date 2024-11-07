@@ -1,11 +1,11 @@
 {
-    "name": "Lishijie0/lazada-php-sdk",
+    "name": "lishijie0/lazada-php-sdk",
     "description": "A Lazada PHP SDK for Laravel",
     "keywords": [
         "lazada",
         "laravel"
     ],
-    "homepage": "https://github.com/Lishijie0/lazada-php-sdk",
+    "homepage": "https://github.com/lishijie0/lazada-php-sdk",
     "license": "MIT",
     "authors": [
         {
