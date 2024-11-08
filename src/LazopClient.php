@@ -275,7 +275,6 @@ class LazopClient
 		}
 		catch (Exception $e)
 		{
-			$this->logApiError($requestUrl,"HTTP_ERROR_" . $e->getCode(),$e->getMessage());
 			throw $e;
 		}
 
@@ -284,13 +283,7 @@ class LazopClient
 		$respObject = json_decode($resp);
 		if(isset($respObject->code) && $respObject->code != "0") 
 		{
-			$this->logApiError($requestUrl, $respObject->code, $respObject->message);
-		} else 
-		{
-			if($this->logLevel == Constants::$log_level_debug || $this->logLevel == Constants::$log_level_info) 
-			{
-				$this->logApiError($requestUrl, '', '');
-			}
+    			throw new Exception($respObject->message, $respObject->code);
 		}
 		return $resp;
 	}
